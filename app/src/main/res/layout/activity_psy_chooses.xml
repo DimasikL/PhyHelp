@@ -47,7 +47,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:backgroundTint="@color/material_dynamic_primary40"
-        android:text="Психолог по проблемам на учебе"
+        android:text="Психолог по проблемам по учебе"
         android:textSize="20sp"
         app:icon="@drawable/psythree"
         app:iconSize="50dp"
