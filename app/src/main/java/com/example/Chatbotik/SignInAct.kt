@@ -50,6 +50,10 @@ class SignInAct : AppCompatActivity() {
             signInWithGoogle()
         }
         checkAuthState()
+        binding.button7.setOnClickListener {
+            val i = Intent(this, Register::class.java)
+            startActivity(i)
+        }
     }
 
     private fun getClient(): GoogleSignInClient {

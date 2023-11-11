@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -29,12 +30,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val nameSpec = intent.getStringExtra("name")
+        val namePer = intent.getStringExtra("namePer")
+        val surnamePer = intent.getStringExtra("surnamePer")
+        Log.d("MyLog","$namePer $surnamePer")
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         auth = Firebase.auth
         setUpActionBar()
         val database = Firebase.database
-        val selectedChatId = auth.currentUser?.displayName
+        val selectedChatId = if (auth.currentUser?.displayName.isNullOrEmpty())"$namePer $surnamePer" else auth.currentUser?.displayName
         val myRef = database.getReference("messages/$nameSpec/$selectedChatId")
         binding.bSend.setOnClickListener {
             myRef.child(myRef.push().key ?: "blabla").setValue(User(auth.currentUser?.displayName, binding.edMessage.text.toString()))

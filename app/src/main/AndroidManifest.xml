@@ -17,6 +17,9 @@
         android:theme="@style/Theme.Chat"
         tools:targetApi="31">
         <activity
+            android:name="com.example.Chatbotik.Register"
+            android:exported="false" />
+        <activity
             android:name="com.example.Chatbotik.SignInAct"
             android:exported="false" />
         <activity

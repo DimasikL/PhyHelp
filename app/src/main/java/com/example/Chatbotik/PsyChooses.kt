@@ -3,6 +3,7 @@ package com.example.Chatbotik
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -26,10 +27,14 @@ class PsyChooses : AppCompatActivity() {
         auth = Firebase.auth
     }
     private fun goNewView(binding: ActivityPsyChoosesBinding) {
-
+        val namePer = intent.getStringExtra("namePer1")
+        val surnamePer = intent.getStringExtra("surnamePer1")
+        Log.d("MyLog","$namePer $surnamePer")
             binding.button2.setOnClickListener {
                 val intent = Intent(this, MainActivity::class.java)
                 intent.putExtra("name", binding.button2.text)
+                intent.putExtra("namePer", "$namePer")
+                intent.putExtra("surnamePer", "$surnamePer")
                 startActivity(intent)
                 finish()
         }
@@ -37,7 +42,8 @@ class PsyChooses : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
 
             intent.putExtra("name", binding.button.text)
-
+            intent.putExtra("namePer", namePer)
+            intent.putExtra("surnamePer", surnamePer)
             startActivity(intent)
             finish()
         }
@@ -45,7 +51,8 @@ class PsyChooses : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
 
             intent.putExtra("name", binding.button3.text)
-
+            intent.putExtra("namePer", namePer)
+            intent.putExtra("surnamePer", surnamePer)
             startActivity(intent)
             finish()
         }
