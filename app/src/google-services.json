@@ -8,6 +8,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:116478073667:android:29df09e3884ef9e5dfadf6",
+        "android_client_info": {
+          "package_name": "com.example.SwiftTalk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "116478073667-o0905tf663rpcf3dnfos5ap3p6nns98i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCac6Wyhju1fmKZqnLPVVwEASPcVBFkXrE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "116478073667-miodjvulncsth6kgc3qbn8aoqejrtlsj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:116478073667:android:93c9fba3eaa68df8dfadf6",
         "android_client_info": {
           "package_name": "com.example.chatbotik"
