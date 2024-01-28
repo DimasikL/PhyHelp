@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         val selectedChatId = if (auth.currentUser?.displayName.isNullOrEmpty())"$namePer $surnamePer" else auth.currentUser?.displayName
         val myRef = database.getReference("messages/$nameSpec/$selectedChatId")
         binding.bSend.setOnClickListener {
-            myRef.child(myRef.push().key ?: "blabla").setValue(User(auth.currentUser?.displayName, binding.edMessage.text.toString()))
+            myRef.child(myRef.push().key ?: "blabla").setValue(User(selectedChatId, binding.edMessage.text.toString()))
             binding.edMessage.setText("")
         }
         binding.imageView.setOnClickListener {
@@ -81,7 +81,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun onChangeListener(dRef: DatabaseReference){
         auth = Firebase.auth
-        val selectedChatId = auth.currentUser?.displayName
         dRef.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 val list = ArrayList<User>()
@@ -103,10 +102,12 @@ class MainActivity : AppCompatActivity() {
         val ab = supportActionBar
         Thread{
             runOnUiThread {
+                val nameSpec = intent.getStringExtra("name")
+                Log.d("MyLog", "$nameSpec")
                 val remakename = when(intent.getStringExtra("name")){
                     "Общий психолог" -> "общим психологом"
                     "Психолог по семейным проблемам" -> "семейным психологом"
-                    "Психолог по проблемам на учебе" -> "школьным психологом"
+                    "Психолог по проблемам по учебе" -> "школьным психологом"
                     else -> "человеком"
                 }
                 ab?.title = "Чат с $remakename"
