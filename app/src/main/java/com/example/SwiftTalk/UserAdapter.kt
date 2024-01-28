@@ -1,4 +1,4 @@
-package com.example.Chatbotik
+package com.example.SwiftTalk
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

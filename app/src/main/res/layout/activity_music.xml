@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/material_dynamic_primary70"
-    tools:context="com.example.Chatbotik.Music">
+    tools:context="com.example.SwiftTalk.Music">
 
     <TextView
         android:id="@+id/textView2"

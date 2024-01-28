@@ -1,11 +1,9 @@
-package com.example.Chatbotik
+package com.example.SwiftTalk
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.example.chatbotik.R
-import com.example.chatbotik.databinding.ActivityMainBinding
 import com.example.chatbotik.databinding.ActivityRegisterBinding
 
 class Register : AppCompatActivity() {

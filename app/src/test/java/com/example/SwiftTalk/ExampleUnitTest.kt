@@ -1,4 +1,4 @@
-package com.example.Chatbotik
+package com.example.SwiftTalk
 
 import org.junit.Test
 
