@@ -1,4 +1,4 @@
-package com.example.Chatbotik
+package com.example.SwiftTalk
 
 data class User(
     val name: String? = null,

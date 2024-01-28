@@ -1,4 +1,4 @@
-package com.example.Chatbotik
+package com.example.SwiftTalk
 
 import android.annotation.SuppressLint
 import android.net.Uri
